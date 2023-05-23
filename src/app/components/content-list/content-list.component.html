@@ -1,0 +1,19 @@
+<ul class="contentCardList">
+    <h3 class="noContent" *ngIf="content.length === 0">There is no content yet.</h3>
+    <app-content-card
+        class="contentCard"
+        *ngFor="let post of content"
+        [id]="post.id"
+        [userID]="post.userID"
+        [title]="post.title"
+        [text]="post.text"
+        [tags]="['blaaaaaaaaa', 'blablabla', 'blaaaaaaaaaaaaaaaaaaaaaaa']"
+        [uploadDate]="post.uploadDate"
+        [imagePath]="post.imagePath"
+    ></app-content-card>
+    <!-- [imagePath]="'https:  //dummyimage.com/600x400/888888/fff'" -->
+</ul>
+
+<section class="loadMoreButton">
+    <button *ngIf="previousContentLength !== content.length" (click)="loadMoreContent()">Load More</button>
+</section>
